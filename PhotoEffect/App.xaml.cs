@@ -57,6 +57,8 @@ namespace PhotoEffect
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+            // デバイスの表示言語に合わせてアプリケーションの言語を設定します
+            RootFrame.Language = System.Windows.Markup.XmlLanguage.GetLanguage(System.Globalization.CultureInfo.CurrentUICulture.Name);
         }
 
         // (たとえば、[スタート] メニューから) アプリケーションが起動するときに実行されるコード
