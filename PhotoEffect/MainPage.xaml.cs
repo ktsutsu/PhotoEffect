@@ -37,6 +37,19 @@ namespace PhotoEffect
             BitmapImage bmp = new BitmapImage();
             bmp.SetSource(e.ChosenPhoto);
             imgPhoto.Source = bmp;
+
+            // 白枠を追加する
+            frame.BorderBrush = new SolidColorBrush(Colors.White);
+            frame.BorderThickness = new Thickness(15);
+
+            // 傾ける
+            RotateTransform rotate = new RotateTransform();
+            rotate.Angle = 5;
+            imgView.RenderTransformOrigin = new Point(0.5, 0.5);
+            imgView.RenderTransform = rotate;
+
+            // 画像の重ね合わせ
+            imgPicture.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
