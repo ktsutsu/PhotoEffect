@@ -74,5 +74,10 @@ namespace PhotoEffect
                 MessageBox.Show("保存しました");
             }
         }
+
+        private void mnuVersion_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("PhotoEffect Version 1.0");
+        }
     }
 }
