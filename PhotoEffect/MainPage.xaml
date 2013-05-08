@@ -26,7 +26,9 @@
         </StackPanel>
 
         <!--ContentPanel - 追加コンテンツをここに入力します-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid Name="imgView" />
+        </Grid>
     </Grid>
  
     <!--ApplicationBar の使用法を示すサンプル コード-->
