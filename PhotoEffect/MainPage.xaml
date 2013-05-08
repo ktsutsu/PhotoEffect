@@ -37,11 +37,12 @@
         <!--ContentPanel - 追加コンテンツをここに入力します-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid Name="imgView">
-                <Grid Name="imgGrid" Background="White" Height="440" Width="440">
-                    <Image Name="imgPhoto" Stretch="UniformToFill" Source="/PhotoEffect;component/image/Logo.png" />
-                    <Image x:Name="imgPicture" Margin="-415,-180,0,0" Source="image/claudia.png" Stretch="Fill" HorizontalAlignment="Left" Width="620" Visibility="Collapsed"/>
-                    <Border x:Name="frame" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                </Grid>
+                <Border x:Name="frame" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+                	<Grid x:Name="imgGrid" Background="White" Height="440" Width="440" d:LayoutOverrides="Width, Height, Margin">
+                		<Image x:Name="imgPhoto" Stretch="UniformToFill" Source="/PhotoEffect;component/image/Logo.png" />
+                		<Image x:Name="imgPicture" Margin="-415,-180,0,0" Source="image/claudia.png" Stretch="Fill" HorizontalAlignment="Left" Width="620" Visibility="Collapsed"/>
+                	</Grid>
+                </Border>
             </Grid>
         </Grid>
     </Grid>
