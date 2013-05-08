@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -8,10 +9,11 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
+using Microsoft.Xna.Framework.Media;
 
 namespace PhotoEffect
 {
@@ -57,6 +59,20 @@ namespace PhotoEffect
             task.PixelWidth = 440;
             task.PixelHeight = 440;
             task.Show();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Grid から Jpeg 保存用ストリームを作成
+            WriteableBitmap wp = new WriteableBitmap(imgGrid, null);
+            MemoryStream stream = new MemoryStream();
+            wp.SaveJpeg(stream, wp.PixelWidth, wp.PixelHeight, 0, 100);
+
+            // PictureHub に保存する
+            using (MediaLibrary lib = new MediaLibrary()) {
+                lib.SavePicture("PhotoEffect-" + DateTime.Now.ToString("yyyyMMddhhmmss"), stream.ToArray());
+                MessageBox.Show("保存しました");
+            }
         }
     }
 }
