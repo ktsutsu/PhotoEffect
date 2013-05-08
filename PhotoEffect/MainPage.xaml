@@ -28,7 +28,9 @@
         <!--ContentPanel - 追加コンテンツをここに入力します-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid Name="imgView">
-                <Grid Name="imgGrid" Background="White" Height="440" Width="440" />
+                <Grid Name="imgGrid" Background="White" Height="440" Width="440">
+                    <Image Name="imgPhoto" Stretch="UniformToFill" Source="/PhotoEffect;component/image/Logo.png" />
+                </Grid>
             </Grid>
         </Grid>
     </Grid>
