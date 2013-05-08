@@ -15,6 +15,7 @@
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
 			<shell:ApplicationBarIconButton x:Name="btnLoad" IconUri="/icons/appbar.feature.camera.rest.png" Text="読み込み"/>
+			<shell:ApplicationBarIconButton x:Name="btnSave" IconUri="/icons/appbar.save.rest.png" Text="保存"/>
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 
